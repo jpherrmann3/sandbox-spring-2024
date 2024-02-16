@@ -33,5 +33,6 @@ public class Driver {
         numbers.forEach(number -> crate.addBox(new Box<>(number)));
 
         System.out.println(crate);
+
     }
 }
