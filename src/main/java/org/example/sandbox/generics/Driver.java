@@ -23,6 +23,7 @@ public class Driver {
                 .distinct()
                 .limit(100)
                 .boxed()
+                .sorted()
                 .collect(Collectors.toList());
 
         numbers.forEach(System.out::println);
@@ -33,6 +34,4 @@ public class Driver {
 
         System.out.println(crate);
     }
-
-
 }
