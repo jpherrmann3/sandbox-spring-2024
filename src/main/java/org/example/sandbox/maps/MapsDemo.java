@@ -18,6 +18,7 @@ public class MapsDemo {
 
         System.out.println("\n" + "Using lambdas:");
         numbers.forEach((key, value) -> System.out.println(key + ": " + value));
+        numbers.forEach((key, value) -> System.out.println((key + 1) + " " + value.toUpperCase()));
 
         System.out.println(numbers);
 
