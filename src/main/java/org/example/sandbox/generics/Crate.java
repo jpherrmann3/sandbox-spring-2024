@@ -7,17 +7,8 @@ public class Crate<T extends Box<?>> {
 
     protected List<T> containers;
 
-
     public Crate() {
         this.containers = new ArrayList<>();
-    }
-
-    public Crate(List<T> containers) {
-        this.containers = containers;
-    }
-
-    public List<T> getContainers() {
-        return this.containers;
     }
 
     public void addBox(T box) {
@@ -26,11 +17,9 @@ public class Crate<T extends Box<?>> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Crate={");
-        sb.append(this.containers);
-        sb.append("}");
+        final StringBuilder sb = new StringBuilder("Crate{");
+        sb.append(containers);
+        sb.append('}');
         return sb.toString();
     }
-
 }

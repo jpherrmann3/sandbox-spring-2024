@@ -7,22 +7,17 @@ public class Factory {
     }
 
     public static void main(String[] args) {
-        try {
 
+        try {
             Box<Integer> box = Factory.getInstance(Box.class);
             String message = Factory.getInstance(String.class);
-
-            message = "Hello";
-
             box.setContents(1);
-
-            System.out.println(box);
+            message = "Hello";
             System.out.println(message);
-
+            System.out.println(box);
         } catch (Exception e) {
-            System.out.println("There was an exception.");
+            throw new RuntimeException(e);
         }
 
     }
-
 }

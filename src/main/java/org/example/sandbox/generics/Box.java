@@ -1,10 +1,11 @@
 package org.example.sandbox.generics;
 
-public class Box<T> {
+public class Box<T extends Number> {
 
     private T contents;
 
     public Box() {
+
     }
 
     public Box(T contents) {
@@ -12,20 +13,18 @@ public class Box<T> {
     }
 
     public T getContents() {
-        return this.contents;
+        return contents;
     }
 
     public void setContents(T contents) {
         this.contents = contents;
     }
 
-
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Box{contents='").append(getContents()).append("'}");
+        final StringBuilder sb = new StringBuilder("Box[");
+        sb.append(contents);
+        sb.append(']');
         return sb.toString();
     }
-
-
 }

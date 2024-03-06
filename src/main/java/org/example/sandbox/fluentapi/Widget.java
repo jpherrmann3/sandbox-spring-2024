@@ -6,11 +6,22 @@ public class Widget {
     private double width;
     private double height;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Widget{");
+        sb.append("length=").append(length);
+        sb.append(", width=").append(width);
+        sb.append(", height=").append(height);
+        sb.append('}');
+        return sb.toString();
+    }
+
     public static WidgetBuilder create() {
         return new WidgetBuilder();
     }
 
     public static final class WidgetBuilder {
+
         private final Widget widget;
 
         private WidgetBuilder() {
@@ -28,19 +39,12 @@ public class Widget {
         }
 
         public WidgetBuilder withHeight(double height) {
-            this.widget.width = height;
+            this.widget.height = height;
             return this;
         }
 
+        public Widget build() {
+            return widget;
+        }
     }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " length='" + length + "'" +
-            ", width='" + width + "'" +
-            ", height='" + height + "'" +
-            "}";
-    }
-
 }

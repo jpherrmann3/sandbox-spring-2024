@@ -1,23 +1,27 @@
 package org.example.sandbox.inheritance;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Driver {
 
     public static void main(String[] args) {
 
-        Jeep jeep = new Jeep();
-        Jeep wrangler = new Wrangler();
+        LandCraft grandCherokee = new GrandCherokee();
+        LandCraft wrangler = new Wrangler();
 
-        jeep.setGasMileage(12.0);
-        wrangler.setGasMileage(13.0);
+        List<LandCraft> landcraft = new ArrayList<>();
+        landcraft.add(grandCherokee);
+        landcraft.add(wrangler);
 
-        System.out.println(jeep.getGasMileage());
-        System.out.println(wrangler.getGasMileage());
+        for (LandCraft lc : landcraft) {
+            System.out.println(lc.getClass().getSimpleName());
+        }
 
-        jeep.numberOfSeats = 55;
-        wrangler.numberOfSeats = 55;
+        landcraft.forEach(System.out::println);
 
-        System.out.println(jeep.getNumberOfSeats());
-        System.out.println(wrangler.getNumberOfSeats());
+
+
 
     }
 }
