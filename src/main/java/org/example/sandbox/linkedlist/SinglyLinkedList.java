@@ -21,20 +21,77 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
 
     @Override
     public void addLast(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addLast'");
+        Node node = new Node(element, null);
+
+        if (tail == null) {
+            head = node;
+        }
+
+        else {
+            tail.next = node;
+        }
+
+        tail = node;
+
     }
 
     @Override
     public E pollFirst() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pollFirst'");
+
+        E element;
+
+        if (head == null) {
+            return null;
+        }
+
+        if (head.next == null) {
+            tail = null;
+        }
+
+        element = head.element;
+
+        Node newHead = head.next;
+
+        head.next = null;
+
+        head = newHead;
+
+        return element;
     }
 
     @Override
     public E pollLast() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pollLast'");
+        E element;
+
+        if (tail == null) {
+            return null;
+        }
+
+        if (head == tail) {
+            element = tail.element;
+            head = null;
+            tail = head;
+            return element;
+        }
+
+        if (head.next == tail) {
+            element = tail.element;
+            head.next = null;
+            tail = head;
+            return element;
+        }
+
+        Node current = head;
+        while (current.next != tail) {
+            current = current.next;
+        }
+
+        element = tail.element;
+        tail = current;
+        current.next = null;
+
+        return element;
+
     }
 
     @Override
