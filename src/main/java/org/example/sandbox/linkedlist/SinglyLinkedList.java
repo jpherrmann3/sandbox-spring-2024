@@ -61,12 +61,15 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
 
     @Override
     public E pollLast() {
-        E element;
 
+        // Guard against empty list
         if (tail == null) {
             return null;
         }
 
+        E element;
+
+        // Guard against only one element
         if (head == tail) {
             element = tail.element;
             head = null;
@@ -74,14 +77,9 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
             return element;
         }
 
-        if (head.next == tail) {
-            element = tail.element;
-            head.next = null;
-            tail = head;
-            return element;
-        }
-
+        // Happy path
         Node current = head;
+
         while (current.next != tail) {
             current = current.next;
         }

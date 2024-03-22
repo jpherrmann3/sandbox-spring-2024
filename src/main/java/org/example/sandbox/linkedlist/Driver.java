@@ -32,6 +32,11 @@ public class Driver {
         System.out.println(singlyLinkedList.pollLast());
         System.out.println(singlyLinkedList.pollLast());
         System.out.println(singlyLinkedList.pollLast());
+        singlyLinkedList.addFirst("Fifth");
+        singlyLinkedList.addLast("!");
+        System.out.println(singlyLinkedList);
+        System.out.println(singlyLinkedList.pollLast());
+        System.out.println(singlyLinkedList.pollLast());
         System.out.println(singlyLinkedList.pollLast());
         System.out.println(singlyLinkedList.pollLast());
         System.out.println(singlyLinkedList.pollLast());
