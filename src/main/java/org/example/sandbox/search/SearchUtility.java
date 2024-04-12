@@ -1,4 +1,4 @@
-package org.example.search;
+package org.example.sandbox.search;
 
 import java.util.Arrays;
 import java.util.List;
